@@ -1,3 +1,4 @@
+import { FetchapiService } from './../../services/fetchapi.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GroceriesComponent implements OnInit {
 
-  constructor() { }
+  groceries: any;
 
+  constructor(private groceriesApi: FetchapiService) { }
+  
   ngOnInit(): void {
+    this.groceriesApi.getProducts().subscribe(res=>{
+      this.groceries = res;
+      console.log(this.groceries);    
+    })
   }
-
+  
 }

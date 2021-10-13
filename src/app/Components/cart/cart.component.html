@@ -1,1 +1,18 @@
-<p>cart works!</p>
+<ng-container *ngIf="false">
+
+    <div class="container">
+    <div class="card">
+        <h4>Your Cart</h4>
+    </div>
+
+    <div class="center">
+        <h5><strong>Your cart is empty!</strong></h5>
+        <button [routerLink]="['/groceries']" routerLinkActive="router-link-active"  class="btn btn-primary">Shop Now</button>
+    </div>
+
+</div>
+</ng-container>
+
+<ng-container *ngIf="true">
+
+</ng-container>
