@@ -37,10 +37,10 @@
 
       <!-- Shopping Cart Icon -->
       <li class="nav-item">
-          <a [routerLink]="['/cart']" routerLinkActive="router-link-active"  class="nav-link" href="#">
+          <a [routerLink]="['/cart']" class="nav-link" href="#">
           <span><i class="fas fa-shopping-cart"></i></span>
           <!-- Badge -->
-          <span class="badge badge-pill bg-danger">0</span>
+          <span class="badge badge-pill bg-danger">{{cartCount}}</span>
           </a>
       </li>
     </ul>

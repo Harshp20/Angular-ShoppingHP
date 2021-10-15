@@ -4,8 +4,8 @@
         <div class="card col-md-3">
             <img src="{{grocery.image}}" alt="">
             <h5 style="margin-left: 20px;">{{grocery.name}}</h5>
-            <p style="margin-left: 20px;"><strong>Price: </strong>{{grocery.price}}</p>
-            <button  class="btn btn-primary cart-btn">Add to cart</button>
+            <p style="margin-left: 20px;"><strong>Price: </strong>{{'$' + grocery.price}}</p>
+            <button  class="btn btn-primary cart-btn" (click)="addToCart(grocery)">Add to cart</button>
             <button class="btn btn-primary wishlist-btn">Add to wishlist</button>
         </div>
     </ng-container>
