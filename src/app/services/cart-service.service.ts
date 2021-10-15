@@ -9,6 +9,7 @@ import { BehaviorSubject } from 'rxjs';
 export class CartServiceService {
 
   public cartItems: any = [];
+  public WishlistItems: any = [];
   public productList= new BehaviorSubject<any>([]);
 
   constructor() {}
@@ -29,7 +30,6 @@ export class CartServiceService {
     // Case 2: 
     let exists = this.cartItems.find((a:any)=>a.name == product.name);
     // console.log(exists);
-    
      try{
        if(product.name != exists.name){}
       }
@@ -37,13 +37,28 @@ export class CartServiceService {
        this.cartItems.splice(0,0,product);
        
      }
-   
+     
+     
+
+    //  this.cartItems[this.cartItems.indexOf(product)].quantity++;
     //   if(product.name != a.name){
     //   }
     // });
 
       this.productList.next(this.cartItems);
     this.getTotalCost();    
+  }
+  
+  addToWishlist(product: any){
+    let exists = this.WishlistItems.find((a:any)=>a.name == product.name);
+     try{
+       if(product.name != exists.name){}
+      }
+      catch{
+       this.WishlistItems.splice(0,0,product);
+     }
+
+    this.productList.next(this.WishlistItems);
   }
 
   getTotalCost(){
@@ -55,6 +70,15 @@ export class CartServiceService {
     return total;
   }
 
+  incrementQuantity(product: any){
+    try{
+      let exists = this.cartItems.find((a:any)=>a.name == product.name);
+      exists.quantity++;
+      exists.price+= exists.price;
+     }
+     catch{}
+  }
+
   deletecartItems(product: any){
       this.cartItems.splice(this.cartItems.indexOf(product), 1);
       this.productList.next(this.cartItems);
@@ -63,6 +87,16 @@ export class CartServiceService {
   emptyCart(){
     this.cartItems = [];
     this.productList.next(this.cartItems);
+  }
+  
+  deleteWishlistItems(product: any){
+      this.WishlistItems.splice(this.WishlistItems.indexOf(product), 1);
+      this.WishlistItems.next(this.WishlistItems);
+  }
+
+  emptyWishlist(){
+    this.WishlistItems = [];
+    this.WishlistItems.next(this.WishlistItems);
   }
 
 

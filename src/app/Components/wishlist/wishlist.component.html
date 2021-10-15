@@ -1,19 +1,19 @@
-<ng-container *ngIf="productList.length == 0">
+<ng-container *ngIf="wishListItems.length == 0">
 
     <div class="container">
     <div class="card">
-        <h4>Your Cart</h4>
+        <h4>Your Wishlist</h4>
     </div>
 
     <div class="center">
-        <h5><strong>Your cart is empty!</strong></h5>
-        <button [routerLink]="['/groceries']" routerLinkActive="router-link-active"  class="btn btn-primary">Shop Now</button>
+        <h5><strong>❤️ Your Wishlist is empty!</strong></h5>
+        <button [routerLink]="['/groceries']" routerLinkActive="router-link-active"  class="btn btn-primary">Add something here...</button>
     </div>
 
 </div>
 </ng-container>
 
-<ng-container *ngIf="productList.length != 0">
+<ng-container *ngIf="wishListItems.length != 0">
     <div class="container">
 <div class="card-table">
     <div class="cart-product">
@@ -23,34 +23,26 @@
                     <th>Product name</th>
                     <th>Product</th>
                     <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Total</th>
                     <th>Actions</th>
                     </tr>
                 </thead>
                     <tbody style="text-align: center;">
-                        <tr *ngFor="let item of productList">
+                        <tr *ngFor="let item of wishListItems">
                             <td>{{item.name}}</td>
                             <td>
                                 <img style="width: 100px;" src="{{item.image}}" alt=""></td>
                             <td>{{'$'+ item.price}}</td>
-                            <td>{{item.quantity}}</td>
-                            <td>{{item.total}}</td>
-                            <td><button (click)="deletecartItems(item)" class="btn btn-danger">Remove</button></td>
+                            <td><button (click)="deleteWishlistItems(item)" class="btn btn-danger">Remove</button></td>
                         </tr>
 
                         <tr>
                             <td colspan="2"></td>
                             <td>
-                                <button (click)="emptyCart()" class="btn btn-danger">Empty Cart</button>
+                                <button (click)="emptyWishlist()" class="btn btn-danger">Empty Wishlist</button>
                             </td>
                             <td>
-                                <button [routerLink]="['/groceries']" class="btn btn-primary">Keep Shopping</button>
+                                <button [routerLink]="['/groceries']" class="btn btn-primary">Back to Shopping</button>
                             </td>
-                            <td>
-                                <button class="btn btn-success">Checkout</button>
-                            </td>
-                            <td>Cart Total: <strong>{{'$' + total}}</strong></td>
                         </tr>
                     </tbody>
         </table>

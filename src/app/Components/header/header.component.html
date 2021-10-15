@@ -23,16 +23,20 @@
     </div>
 
     <ul class="navbar-nav">
+      
+      <!-- Wishlist Icon-->
       <li>
-        <!-- Wishlist Icon-->
-        <a class="nav-item">
+        <a [routerLink]="['wishlist']" class="nav-item">
         <span><i class="material-icons heart">favorite</i></span>
         </a>
       </li>
-      <li><a class="nav-item">
+
+      <li>
+        <a [routerLink]="['/wishlist']" class="nav-item">
         <!-- Badge -->
-        <span class="badge badge-pill bg-danger wishlist">10</span>
-        </a></li>
+        <span class="badge badge-pill bg-danger wishlist">{{wishlistCount}}</span>
+        </a>
+      </li>
 
 
       <!-- Shopping Cart Icon -->

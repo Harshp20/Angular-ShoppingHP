@@ -9,8 +9,9 @@ import { HeaderComponent } from './Components/header/header.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    routingComponents
+    routingComponents,
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,

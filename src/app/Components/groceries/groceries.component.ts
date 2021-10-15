@@ -1,3 +1,4 @@
+import { WishlistService } from './../../services/wishlist.service';
 import { CartServiceService } from './../../services/cart-service.service';
 import { FetchapiService } from './../../services/fetchapi.service';
 import { Component, OnInit } from '@angular/core';
@@ -9,16 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GroceriesComponent implements OnInit {
 
-  public groceries: any;
-
-  constructor(private groceriesApi: FetchapiService, private cartService: CartServiceService) { }
+  public groceries: any =[];
+  
+  constructor(private groceriesApi: FetchapiService, private cartService: CartServiceService, private wishlistService: WishlistService) { }
   
   ngOnInit(): void {
     this.groceriesApi.getProducts().subscribe(res=>{
       this.groceries = res;
       console.log(this.groceries);
     });
-
+    
     // this.groceries.forEach((i:any) => {
     //   Object.assign(i, {
     //     Quantity: 1,
@@ -29,6 +30,10 @@ export class GroceriesComponent implements OnInit {
 
   addToCart(item: any){
     this.cartService.addToCart(item);
+  }
+
+  addToWishlist(item:any){
+    this.wishlistService.addToWishlist(item);
   }
   
 }
