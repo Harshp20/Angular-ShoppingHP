@@ -11,13 +11,13 @@ data= [
         id: '1',
         name: 'Apple',
         price: 1,
-        quantity: 0,
+        quantity: 1,
         image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/apple.jpg?raw=true'
     },
     {
         id:'2',
         name: 'Watermelon',
-        quantity: 0,
+        quantity: 1,
         price: 5,
         image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/watermelon.jpg?raw=true'
     },
@@ -25,28 +25,28 @@ data= [
         id:'3',
         name: 'Cabbage',
         price: 4,
-        quantity: 0,
+        quantity: 1,
         image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/cabbage.jpg?raw=true'
     },
     {
         id: '4',
         name: 'Cauliflower',
         price: 3.5,
-        quantity: 0,
+        quantity: 1,
         image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/cauliflower.jpg?raw=true'
     },
     {
         id: '5',
         name: 'Coriander',
         price: 0.5,
-        quantity: 0,
+        quantity: 1,
         image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/coriander.jpg?raw=true    '
     },
     {
         id:'6',
         name: 'Potato',
         price: 3,
-        quantity: 0,
+        quantity: 1,
         image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/potato.jpg?raw=true'
     },
     {
@@ -54,14 +54,14 @@ data= [
         id: '7',
         name: 'Tomato',
         price: 2.5,
-        quantity: 0,
+        quantity: 1,
         image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/tomato.jpg?raw=true'
     },
     {
         id: '8',
         name: 'Green Apple',
         price: 3.5,
-        quantity: 0,
+        quantity: 1,
         image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/green-apple.jpg?raw=true'
     },
 ]

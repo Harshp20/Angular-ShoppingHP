@@ -10,6 +10,7 @@ export class CartComponent implements OnInit {
   
   public productList: any =[];
   public total: number = 0;
+  public cloneProductList: any =[];
   
   constructor(private cartService: CartServiceService) { }
 
@@ -19,6 +20,7 @@ export class CartComponent implements OnInit {
       this.total = this.cartService.getTotalCost();
     });
   }
+
 
   deletecartItems(item: any){
     this.cartService.deletecartItems(item);

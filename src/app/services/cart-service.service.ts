@@ -9,10 +9,14 @@ import { BehaviorSubject } from 'rxjs';
 export class CartServiceService {
 
   public cartItems: any = [];
-  public WishlistItems: any = [];
   public productList= new BehaviorSubject<any>([]);
-
-  constructor() {}
+  public cloneProductList: any =[];
+  
+  
+  
+  constructor() {
+    
+  }
 
   getProducts(){
     return this.productList.asObservable();
@@ -48,18 +52,6 @@ export class CartServiceService {
       this.productList.next(this.cartItems);
     this.getTotalCost();    
   }
-  
-  addToWishlist(product: any){
-    let exists = this.WishlistItems.find((a:any)=>a.name == product.name);
-     try{
-       if(product.name != exists.name){}
-      }
-      catch{
-       this.WishlistItems.splice(0,0,product);
-     }
-
-    this.productList.next(this.WishlistItems);
-  }
 
   getTotalCost(){
     let total = 0;
@@ -87,16 +79,6 @@ export class CartServiceService {
   emptyCart(){
     this.cartItems = [];
     this.productList.next(this.cartItems);
-  }
-  
-  deleteWishlistItems(product: any){
-      this.WishlistItems.splice(this.WishlistItems.indexOf(product), 1);
-      this.WishlistItems.next(this.WishlistItems);
-  }
-
-  emptyWishlist(){
-    this.WishlistItems = [];
-    this.WishlistItems.next(this.WishlistItems);
   }
 
 

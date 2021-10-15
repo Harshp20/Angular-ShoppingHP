@@ -5,7 +5,7 @@
             <img src="{{grocery.image}}" alt="">
             <h5 style="margin-left: 20px;">{{grocery.name}}</h5>
             <p style="margin-left: 20px;"><strong>Price: </strong>{{'$' + grocery.price}}</p>
-            <button  class="btn btn-primary cart-btn" (click)="addToCart(grocery)">Add to Cart</button>
+            <button  class="btn btn-primary cart-btn" (click)="addToCart(grocery)"><i style="color:rgb(255, 255, 255);" class="fas fa-cart-plus"></i> Add to Cart</button>
             <button (click)="addToWishlist(grocery)" class="btn btn-primary wishlist-btn">❤️ Add to Wishlist</button>
         </div>
     </ng-container>

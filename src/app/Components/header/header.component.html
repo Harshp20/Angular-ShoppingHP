@@ -1,4 +1,4 @@
-<!--Nav Bar-->
+  <!--Nav Bar-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a [routerLink]="['/groceries']" class="navbar-brand shopping-hp-logo" href="#"><i> Shopping HP</i></a>
@@ -14,10 +14,10 @@
     <div class="collapse navbar-collapse" style="margin-left: 20px;" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" [routerLink]="['/groceries']" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" [routerLink]="['/groceries']" href="#">Groceries</a>
         </li>
       </ul>
     </div>
