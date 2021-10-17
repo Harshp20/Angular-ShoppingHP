@@ -26,8 +26,6 @@ export class GroceriesComponent implements OnInit {
     // });
     // console.log(this.cloneGroceries);
     
-    
-    
     // this.groceries.forEach((i:any) => {
     //   Object.assign(i, {
     //     Quantity: 1,
