@@ -10,10 +10,7 @@ export class CartServiceService {
 
   public cartItems: any = [];
   public productList= new BehaviorSubject<any>([]);
-  public cloneProductList: any =[];
-  
-  
-  
+
   constructor() {
     
   }

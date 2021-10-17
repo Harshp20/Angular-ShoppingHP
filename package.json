@@ -19,10 +19,17 @@
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
     "@popperjs/core": "^2.10.2",
+    "aws-amplify": "^4.3.2",
+    "aws-amplify-angular": "^6.0.20",
+    "body-parser": "^1.19.0",
     "bootstrap": "^5.1.3",
+    "bulma": "^0.9.3",
+    "cors": "^2.8.5",
     "jquery": "^3.6.0",
+    "mongoose": "^6.0.11",
     "popper.js": "^1.16.1",
     "rxjs": "~6.6.0",
+    "scss-scaffold": "0.0.5",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
@@ -38,6 +45,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
-    "typescript": "~4.3.5"
+    "typescript": "~4.3.5",
+    "ws": "3.3.2"
   }
 }

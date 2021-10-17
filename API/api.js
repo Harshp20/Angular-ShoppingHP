@@ -1,12 +1,25 @@
 const express = require('express');
+const router = express.Router();
 
-const app= express();
+const User = require('./models/user.js');
+const mongoose = require('mongoose');
+const db = "mongodb+srv://Harshp20:nRlWYyEFiritHy7E@cluster0.47dzo.mongodb.net/ShopHPDB?retryWrites=true&w=majority";
 
-app.use(express.json());
+mongoose.connect(db, (err)=>{
+    if(err){
+        console.log(`Unsuccessful Error: ${err}`);
+    }
+    else
+    {
+        console.log(`MongoDB Auth Successful`);
+    }
+})
 
-const PORT= 8080;
+router.get('/', (req, res)=>{
+    res.status(200).send(data);
+})
 
-data= [
+const data= [
     {
         id: '1',
         name: 'Apple',
@@ -66,22 +79,35 @@ data= [
     },
 ]
 
+router.post('/signup', (req, res)=>{   
 
-app.listen(PORT, ()=>{
-    console.log(`Live on http://localhost:${PORT}`);
+    let userData = req.body;
+    let user = new User(userData);
+    
+    user.save((err, signedupUser)=>{
+        if(err){ console.log(`Error : ${err}`);}
+
+        else{
+            res.status(200).send(signedupUser)
+        }
+    }); 
 })
 
-app.get('/products', (req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
-    res.status(200).send(data)
-});
+router.post('/login', (req, res)=>{
+    
+    let userData = req.body;
 
-/*app.post('/products/:id', (req, res)=>{   
-
-    res.status(200).send(
-        {
-            name: 'Green Apple',
-            price: '$3.5',
+    User.findOne({username : userData.username}, (error, user)=>{
+        if(error)
+            console.log(error)
+        else if(!user){
+            res.status(401).send('Incorrect email')
         }
-    );
-})*/
+        else if(user.password != userData.password)
+            res.status(401).send("Incorrect password")
+        else
+            res.status(200).send(user)
+    })
+})
+
+module.exports = router;

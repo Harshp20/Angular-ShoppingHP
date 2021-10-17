@@ -12,6 +12,7 @@ export class GroceriesComponent implements OnInit {
 
   public groceries: any =[];
   
+  
   constructor(private groceriesApi: FetchapiService, private cartService: CartServiceService, private wishlistService: WishlistService) { }
   
   ngOnInit(): void {
@@ -19,6 +20,13 @@ export class GroceriesComponent implements OnInit {
       this.groceries = res;
       console.log(this.groceries);
     });
+    
+    // this.groceries.forEach((element:any) => {
+    //   this.cloneGroceries.push(element);
+    // });
+    // console.log(this.cloneGroceries);
+    
+    
     
     // this.groceries.forEach((i:any) => {
     //   Object.assign(i, {
@@ -32,7 +40,7 @@ export class GroceriesComponent implements OnInit {
     this.cartService.addToCart(item);
   }
 
-  addToWishlist(item:any){
+  addToWishlist(item: any){
     this.wishlistService.addToWishlist(item);
   }
   

@@ -1,0 +1,22 @@
+<div id="login-box">
+    <form (submit)="login($event)">
+    <div class="left">
+      <h1>Sign up</h1>
+        
+      <input type="text" id="username" placeholder="Username" />
+      <input type="password" id="password" placeholder="Password">
+      
+      <input type="submit" name="login_submit" value="Login" />
+    </div>
+    
+    <!-- Login w/ Social Media  -->
+    <div class="right">
+      <span style="color: rgb(56, 56, 56)" class="loginwith">Sign in with<br />social network</span>
+      
+      <button class="social-signin facebook">Log in with facebook</button>
+      <button class="social-signin twitter">Log in with Twitter</button>
+      <button class="social-signin google">Log in with Google+</button>
+    </div>
+</form>
+    <div class="or">OR</div>
+  </div>
