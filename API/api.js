@@ -16,6 +16,8 @@ mongoose.connect(db, (err)=>{
 })
 
 router.get('/', (req, res)=>{
+    // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+    // The above setting has been applied in app.use(cors) in server.js file
     res.status(200).send(data);
 })
 
@@ -79,19 +81,33 @@ const data= [
     },
 ]
 
+
+
 router.post('/signup', (req, res)=>{   
 
     let userData = req.body;
     let user = new User(userData);
     
-    user.save((err, signedupUser)=>{
-        if(err){ console.log(`Error : ${err}`);}
+    User.findOne({username : userData.username}, (error, userReturned)=>{
+        if(error)
+        console.log(error);
 
-        else{
-            res.status(200).send(signedupUser)
+        else if(userReturned){
+            console.log(userReturned);
+            res.status(401).send(`User ${userReturned} already exists`);
         }
-    }); 
-})
+        else{
+            user.save((err, signedupUser)=>{
+                if(err){ console.log(`Error : ${err}`)}
+
+                else{
+                    res.status(200).send(signedupUser);
+                }
+            });
+        }
+    });
+});
+        
 
 router.post('/login', (req, res)=>{
     
@@ -99,15 +115,14 @@ router.post('/login', (req, res)=>{
 
     User.findOne({username : userData.username}, (error, user)=>{
         if(error)
-            console.log(error)
-        else if(!user){
-            res.status(401).send('Incorrect email')
-        }
+            console.log(error);
+        else if(!user)
+            res.status(401).send('Requested user doesn\'t exist')
         else if(user.password != userData.password)
             res.status(401).send("Incorrect password")
         else
             res.status(200).send(user)
-    })
-})
+    });
+});
 
 module.exports = router;

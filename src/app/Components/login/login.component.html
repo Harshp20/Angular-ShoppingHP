@@ -1,17 +1,17 @@
 <div id="login-box">
-    <form (submit)="login($event)">
+    <form >
     <div class="left">
-      <h1>Sign up</h1>
+      <h1>Login</h1>
         
-      <input type="text" id="username" placeholder="Username" />
-      <input type="password" id="password" placeholder="Password">
+      <input type="text" [(ngModel)]="userLoginData.username" name="username" placeholder="Username">
+      <input type="password" [(ngModel)]="userLoginData.password" name="password"  placeholder="Password">
       
-      <input type="submit" name="login_submit" value="Login" />
+      <input (click)="login()" type="submit" name="login_submit" value="Login">
     </div>
     
     <!-- Login w/ Social Media  -->
     <div class="right">
-      <span style="color: rgb(56, 56, 56)" class="loginwith">Sign in with<br />social network</span>
+      <span style="color: rgb(56, 56, 56)" class="loginwith">Sign in with<br />Social Network</span>
       
       <button class="social-signin facebook">Log in with facebook</button>
       <button class="social-signin twitter">Log in with Twitter</button>

@@ -1,3 +1,6 @@
+import { WishlistService } from './services/wishlist.service';
+import { FetchapiService } from './services/fetchapi.service';
+import { CartServiceService } from './services/cart-service.service';
 import { AuthService } from './services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -22,7 +25,12 @@ import { HeaderComponent } from './Components/header/header.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    CartServiceService,
+    FetchapiService,
+    WishlistService  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

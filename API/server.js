@@ -1,9 +1,14 @@
 const express = require('express');
-// const cors = require('cors')
 const app= express(); 
 
+const cors = require('cors')
+// app.use(cors); WRONG
+app.use(cors({
+    origin: 'http://localhost:4200'
+}));
+
 app.use(express.json());
-// app.use(cors);
+
 
 const PORT= 8080;
 

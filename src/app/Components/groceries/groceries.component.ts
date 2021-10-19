@@ -12,7 +12,6 @@ export class GroceriesComponent implements OnInit {
 
   public groceries: any =[];
   
-  
   constructor(private groceriesApi: FetchapiService, private cartService: CartServiceService, private wishlistService: WishlistService) { }
   
   ngOnInit(): void {
