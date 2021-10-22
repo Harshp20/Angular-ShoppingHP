@@ -1,12 +1,13 @@
 <div id="login-box">
-    <form >
+    <form class="form" (ngSubmit)="login(f.value)" #f="ngForm">
     <div class="left">
       <h1>Login</h1>
         
-      <input type="text" [(ngModel)]="userLoginData.username" name="username" placeholder="Username">
-      <input type="password" [(ngModel)]="userLoginData.password" name="password"  placeholder="Password">
+      <input class="formControl" type="text" ngModel name="username" placeholder="Username">
+      <input class="formControl" type="password" ngMode name="password"  placeholder="Password">
       
-      <input (click)="login()" type="submit" name="login_submit" value="Login">
+      <button class="btn btn-success" type="submit" name="login_submit">Login</button>
+
     </div>
     
     <!-- Login w/ Social Media  -->

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+const jwt = require('jsonwebtoken');
 const User = require('./models/user.js');
 const mongoose = require('mongoose');
 const db = "mongodb+srv://Harshp20:nRlWYyEFiritHy7E@cluster0.47dzo.mongodb.net/ShopHPDB?retryWrites=true&w=majority";
@@ -18,7 +18,7 @@ mongoose.connect(db, (err)=>{
 router.get('/', (req, res)=>{
     // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
     // The above setting has been applied in app.use(cors) in server.js file
-    res.status(200).send(data);
+    res.status(200).json(data);
 })
 
 const data= [
@@ -91,9 +91,8 @@ router.post('/signup', (req, res)=>{
     User.findOne({username : userData.username}, (error, userReturned)=>{
         if(error)
         console.log(error);
-
         else if(userReturned){
-            console.log(userReturned);
+            // console.log(userReturned);
             res.status(401).send(`User ${userReturned} already exists`);
         }
         else{
@@ -101,7 +100,9 @@ router.post('/signup', (req, res)=>{
                 if(err){ console.log(`Error : ${err}`)}
 
                 else{
-                    res.status(200).send(signedupUser);
+                    let payload = {subject: signedupUser._id};
+                    let token = jwt.sign(payload, 'secretkey');
+                    res.status(200).json({token});
                 }
             });
         }
@@ -117,11 +118,15 @@ router.post('/login', (req, res)=>{
         if(error)
             console.log(error);
         else if(!user)
-            res.status(401).send('Requested user doesn\'t exist')
+            res.send('Requested user doesn\'t exist')
         else if(user.password != userData.password)
-            res.status(401).send("Incorrect password")
+            res.send("Incorrect password")
         else
-            res.status(200).send(user)
+        {
+            let payload = {subject: user._id};
+            let token = jwt.sign(payload, 'secretkey')
+            res.status(200).json({token})
+        }
     });
 });
 

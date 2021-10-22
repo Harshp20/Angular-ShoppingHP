@@ -1,3 +1,5 @@
+import { map } from 'rxjs/operators';
+// import 'rxjs/add/operator/map';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -11,12 +13,31 @@ export class AuthService {
   private signupUrl= 'http://localhost:8080/products/signup';
   private loginUrl= 'http://localhost:8080/products/login';
 
-  signupUser(user: any){
-    return this.http.post(this.signupUrl, user);
+  login(user:any){  
+    return this.http.post(this.loginUrl, user).pipe(map((res:any)=>{
+      if(res && res.token)
+      {
+        console.log(res, res.token);
+        localStorage.setItem('token', res.token);
+        return true;
+      }
+      else
+        return false;
+    }));
+    
   }
-
-  login(user:any){
-    return this.http.post(this.loginUrl, user);
+  
+  signupUser(user:any){
+    return this.http.post(this.signupUrl, user).pipe(map((res:any)=>{
+      if(res && res.token)
+      {
+        console.log(res, res.token);
+        localStorage.setItem('token', res.token);
+        return true;
+      }
+      else
+        return false;
+    }));
   }
   
 }
