@@ -24,61 +24,68 @@ router.get('/', (req, res)=>{
 const data= [
     {
         id: '1',
-        name: 'Apple',
+        name: 'Apple AirPods with Charging Case',
         price: 1,
         quantity: 1,
-        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/apple.jpg?raw=true'
+        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/airpods2.jpeg?raw=true'
     },
     {
         id:'2',
-        name: 'Watermelon',
+        name: 'Samsung 55inch 4K UHD TV',
         quantity: 1,
         price: 5,
-        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/watermelon.jpg?raw=true'
+        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/samsungtv.jpeg?raw=true'
     },
     {
         id:'3',
-        name: 'Cabbage',
+        name: 'Apple iPhone 12 256GB (Purple)',
         price: 4,
         quantity: 1,
-        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/cabbage.jpg?raw=true'
+        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/iphone-12-mjnm3hn-a-apple-original-imag2k2v6ehvnzfd.jpeg?raw=true'
     },
     {
         id: '4',
-        name: 'Cauliflower',
+        name: 'Apple Airpods Max',
         price: 3.5,
         quantity: 1,
-        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/cauliflower.jpg?raw=true'
+        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/airpodsmax.jpeg?raw=true'
     },
     {
         id: '5',
-        name: 'Coriander',
+        name: 'Apple Airpods Pro',
         price: 0.5,
         quantity: 1,
-        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/coriander.jpg?raw=true    '
+        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/airpodspro.jpeg?raw=true'
     },
     {
         id:'6',
-        name: 'Potato',
+        name: 'Acer Preedator Helios 300',
         price: 3,
         quantity: 1,
-        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/potato.jpg?raw=true'
+        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/helios300.jpeg?raw=true'
     },
     {
         
         id: '7',
-        name: 'Tomato',
+        name: 'Apple Homepod',
         price: 2.5,
         quantity: 1,
-        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/tomato.jpg?raw=true'
+        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/homepod.jpeg?raw=true'
     },
     {
         id: '8',
-        name: 'Green Apple',
+        name: 'RGB Gaming Keyboard',
         price: 3.5,
         quantity: 1,
-        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/green-apple.jpg?raw=true'
+        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/rgbkeyboard.jpeg?raw=true'
     },
+    {
+        id: '9',
+        name: 'Samsung S21 Ultra 256GB',
+        price: 3.5,
+        quantity: 1,
+        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/s21.jpeg?raw=true'
+    }
 ]
 
 
