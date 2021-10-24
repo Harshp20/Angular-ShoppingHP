@@ -34,7 +34,7 @@ const data= [
         name: 'Samsung 55inch 4K UHD TV',
         quantity: 1,
         price: 5,
-        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Products%20Pictures/IMG_9559.jpeg?raw=true'
+        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Products%20Pictures/airpods2.JPG?raw=true'
     },
     {
         id:'3',
