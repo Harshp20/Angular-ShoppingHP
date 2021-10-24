@@ -35,7 +35,7 @@ const data= [
         image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Products%20Pictures/airpodsmax.JPG?raw=true'
     },
     {
-        name: 'Acer Preedator Helios 300',
+        name: 'Acer Predator Helios 300',
         price: 1400,
         quantity: 1,
         image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Products%20Pictures/helios300.JPG?raw=true'

@@ -8,18 +8,18 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
-  userData= {
-   username: '',
-   password: ''
-  };
+  // userData= {
+  //  username: '',
+  //  password: ''
+  // };
   
   constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  signupUser(){
-    this.auth.signupUser(this.userData).subscribe((res:any)=>{
+  signupUser(user: any){
+    this.auth.signupUser(user).subscribe((res:any)=>{
       if(res == true){
         console.log('Success');
         this.router.navigate(['/login']);

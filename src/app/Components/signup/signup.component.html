@@ -2,12 +2,15 @@
   <div class="form-group">
     <div class="left">
       <h1>Sign up</h1>
-      <form class="form">
-      <input type="text" class="form-control" [(ngModel)]="userData.username" name="username" placeholder="Email" />
-      <input type="password" class="form-control" [(ngModel)]="userData.password" name="password" placeholder="Password" />
+      <form class="form" #f="ngForm" (ngSubmit)="signupUser(f.value)">
+      <input type="text" class="form-control" ngModel name="username" placeholder="Email" />
+      <input type="password" class="form-control" ngModel name="password" placeholder="Password" />
       <input type="password" class="form-control" name="password2" placeholder="Retype password" />
       
-      <input (click)="signupUser()" type="submit" name="signup_submit" value="Sign me up" />
+      <!-- <input (click)="signupUser()" type="submit" name="signup_submit" value="Sign me up" /> -->
+      <button class="btn btn-success" type="submit" name="login_submit">Sign Up</button>
+      <button style="margin-left: 10px;" [routerLink]="['/login']" class="btn btn-outline-dark" type="submit" name="login_submit">Login</button>
+
     </form>
     </div>
     

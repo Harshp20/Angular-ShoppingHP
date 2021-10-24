@@ -51,5 +51,9 @@ export class AuthService {
         return false;
     }));
   }
+
+  isLoggedIn(){
+    return !!localStorage.getItem('token');
+  }
   
 }
