@@ -1,23 +1,23 @@
-import { WishlistService } from './../../services/wishlist.service';
-import { CartServiceService } from './../../services/cart-service.service';
-import { FetchapiService } from './../../services/fetchapi.service';
+import { WishlistService } from '../../services/wishlist.service';
+import { CartServiceService } from '../../services/cart-service.service';
+import { FetchapiService } from '../../services/fetchapi.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-groceries',
-  templateUrl: './groceries.component.html',
-  styleUrls: ['./groceries.component.css']
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.css']
 })
-export class GroceriesComponent implements OnInit {
+export class ProductsComponent implements OnInit {
 
-  public groceries: any =[];
+  public products: any =[];
   
   constructor(private groceriesApi: FetchapiService, private cartService: CartServiceService, private wishlistService: WishlistService) { }
   
   ngOnInit(): void {
     this.groceriesApi.getProducts().subscribe(res=>{
-      this.groceries = res;
-      console.log(this.groceries);
+      this.products = res;
+      console.log(this.products);
     });
     
     // this.groceries.forEach((element:any) => {

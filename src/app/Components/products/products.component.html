@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let product of products">
+        <div class="card col-md-3">
+            <img src="{{product.image}}" alt="">
+            <h5 class="product-name" style="margin-left: 20px;">{{product.name}}</h5>
+            <p style="margin-left: 20px;"><strong>Price: </strong>{{'$' + product.price}}</p>
+            <button  class="btn btn-outline-success" (click)="addToCart(product)"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+            <button (click)="addToWishlist(product)" class="btn btn-outline-danger"><i class="far fa-heart"></i> Add to Wishlist</button>
+        </div>
+    </ng-container>
+    </div>
+</div>

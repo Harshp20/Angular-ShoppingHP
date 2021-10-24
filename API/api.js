@@ -23,68 +23,59 @@ router.get('/', (req, res)=>{
 
 const data= [
     {
-        id: '1',
-        name: 'Apple AirPods with Charging Case',
-        price: 1,
+        name: 'Apple AirPods 2nd Generation',
+        price: 179,
         quantity: 1,
-        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/airpods2.jpeg?raw=true'
-    },
-    {
-        id:'2',
-        name: 'Samsung 55inch 4K UHD TV',
-        quantity: 1,
-        price: 5,
         image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Products%20Pictures/airpods2.JPG?raw=true'
     },
     {
-        id:'3',
-        name: 'Apple iPhone 12 256GB (Purple)',
-        price: 4,
-        quantity: 1,
-        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/iphone-12-mjnm3hn-a-apple-original-imag2k2v6ehvnzfd.jpeg?raw=true'
-    },
-    {
-        id: '4',
         name: 'Apple Airpods Max',
-        price: 3.5,
+        price: 679,
         quantity: 1,
-        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/airpodsmax.jpeg?raw=true'
+        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Products%20Pictures/airpodsmax.JPG?raw=true'
     },
     {
-        id: '5',
-        name: 'Apple Airpods Pro',
-        price: 0.5,
-        quantity: 1,
-        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/airpodspro.jpeg?raw=true'
-    },
-    {
-        id:'6',
         name: 'Acer Preedator Helios 300',
-        price: 3,
+        price: 1400,
         quantity: 1,
-        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/helios300.jpeg?raw=true'
+        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Products%20Pictures/helios300.JPG?raw=true'
+    },
+    {
+        name: 'Apple iPhone 12 256GB',
+        price: 1300,
+        quantity: 1,
+        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Products%20Pictures/iphone12.JPG?raw=true'
+    },
+    {
+        name: 'Apple Airpods Pro',
+        price: 280,
+        quantity: 1,
+        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Products%20Pictures/airpodspro.JPG?raw=true'
     },
     {
         
-        id: '7',
         name: 'Apple Homepod',
-        price: 2.5,
+        price: 500,
         quantity: 1,
-        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/homepod.jpeg?raw=true'
+        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Products%20Pictures/homepod.JPG?raw=true'
     },
     {
-        id: '8',
         name: 'RGB Gaming Keyboard',
-        price: 3.5,
+        price: 700,
         quantity: 1,
-        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/rgbkeyboard.jpeg?raw=true'
+        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Products%20Pictures/rgbkeyboard.JPG?raw=true'
     },
     {
-        id: '9',
         name: 'Samsung S21 Ultra 256GB',
-        price: 3.5,
+        price: 1000,
         quantity: 1,
-        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Images/s21.jpeg?raw=true'
+        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Products%20Pictures/samsungs21ultra.JPG?raw=true'
+    },
+    {
+        name: 'Samsung 55inch 4K UHD TV',
+        price: 650,
+        quantity: 1,
+        image: 'https://github.com/Harshp20/ShoppingHP/blob/wizard/API/Products%20Pictures/samsung4kuhdtv.JPG?raw=true'
     }
 ]
 

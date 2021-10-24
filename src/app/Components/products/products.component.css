@@ -10,11 +10,11 @@
     margin-top: 20px;
 }
 
-.btn.btn-primary.cart-btn{
+.btn.btn-outline-success{
     margin: 20px;
 }
 
-.btn.btn-primary.wishlist-btn{
+.btn.btn-outline-danger{
     margin-left: 20px;
     margin-bottom: 20px;
     margin-right: 20px;

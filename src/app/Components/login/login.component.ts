@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   login(user:any){
     this.auth.login(user).subscribe((res:any)=>{
       if(res == true)
-        this.router.navigate(['/groceries']);
+        this.router.navigate(['/products']);
       else if(res == -1){
         console.log('User doesn\'t exist. Sign up!')
       }
