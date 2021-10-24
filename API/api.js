@@ -93,7 +93,7 @@ router.post('/signup', (req, res)=>{
         console.log(error);
         else if(userReturned){
             // console.log(userReturned);
-            res.status(401).send(`User ${userReturned} already exists`);
+            res.json({message: "User already exists"});
         }
         else{
             user.save((err, signedupUser)=>{
@@ -113,14 +113,21 @@ router.post('/signup', (req, res)=>{
 router.post('/login', (req, res)=>{
     
     let userData = req.body;
-
-    User.findOne({username : userData.username}, (error, user)=>{
+    console.log(userData);
+    
+    User.findOne({
+            username : userData.username}, (error, user)=>{
         if(error)
-            console.log(error);
+            // console.log(error);
+            res.status(404).send('Error occured')
         else if(!user)
-            res.send('Requested user doesn\'t exist')
-        else if(user.password != userData.password)
-            res.send("Incorrect password")
+            res.json({message: 'Requested user doesn\'t exist'})
+        else if(user.password != userData.password){
+            // console.log(user.password);
+            // console.log(userData.username);
+            // console.log(userData.password);
+            res.json({incorrect_password: "Incorrect password"})
+        }
         else
         {
             let payload = {subject: user._id};

@@ -1,10 +1,10 @@
 <div id="login-box">
-    <form class="form" (ngSubmit)="login(f.value)" #f="ngForm">
+    <form class="form" #f="ngForm" (ngSubmit)="login(f.value)" >
     <div class="left">
       <h1>Login</h1>
         
-      <input class="formControl" type="text" ngModel name="username" placeholder="Username">
-      <input class="formControl" type="password" ngMode name="password"  placeholder="Password">
+      <input class="FormControl" type="text" ngModel name="username" placeholder="Username" autofocus required>
+      <input class="FormControl" type="password" ngModel name="password"  placeholder="Password" required>
       
       <button class="btn btn-success" type="submit" name="login_submit">Login</button>
 

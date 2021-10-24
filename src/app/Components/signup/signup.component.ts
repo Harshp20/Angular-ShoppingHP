@@ -12,6 +12,7 @@ export class SignupComponent implements OnInit {
    username: '',
    password: ''
   };
+  
   constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit(): void {
@@ -19,10 +20,15 @@ export class SignupComponent implements OnInit {
 
   signupUser(){
     this.auth.signupUser(this.userData).subscribe((res:any)=>{
-      if(res)
+      if(res == true){
         console.log('Success');
+        this.router.navigate(['/login']);
+      }
+      else if(res === -1)
+        console.log('User already exists');
       else
-        console.log('Wrong');
+      console.log('Error occured while signing up');
+      
     });
   }
   

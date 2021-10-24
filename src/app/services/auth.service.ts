@@ -2,6 +2,7 @@ import { map } from 'rxjs/operators';
 // import 'rxjs/add/operator/map';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,14 @@ export class AuthService {
         localStorage.setItem('token', res.token);
         return true;
       }
+      else if(res && res.message)
+      {
+        return -1;
+      }
+      else if(res && res.incorrect_password){
+        // console.log(res.incorrect_password);
+        return -2;
+      }
       else
         return false;
     }));
@@ -34,6 +43,9 @@ export class AuthService {
         console.log(res, res.token);
         localStorage.setItem('token', res.token);
         return true;
+      }
+      else if(res && res.message){
+        return -1;
       }
       else
         return false;
