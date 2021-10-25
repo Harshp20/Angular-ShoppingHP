@@ -1,10 +1,12 @@
+import { Router } from '@angular/router';
 import { WishlistService } from '../../services/wishlist.service';
 import { CartServiceService } from '../../services/cart-service.service';
 import { FetchapiService } from '../../services/fetchapi.service';
 import { Component, OnInit } from '@angular/core';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
-  selector: 'app-groceries',
+  selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
@@ -12,10 +14,14 @@ export class ProductsComponent implements OnInit {
 
   public products: any =[];
   
-  constructor(private groceriesApi: FetchapiService, private cartService: CartServiceService, private wishlistService: WishlistService) { }
+  constructor(private groceriesApi: FetchapiService, private cartService: CartServiceService, private wishlistService: WishlistService, private router: Router) { }
   
   ngOnInit(): void {
-    this.groceriesApi.getProducts().subscribe(res=>{
+    this.groceriesApi.getProducts().subscribe((res)=>{
+      if(res instanceof HttpErrorResponse)
+        if(res.status === 401)
+          this.router.navigate(['/login']);
+
       this.products = res;
       console.log(this.products);
     });

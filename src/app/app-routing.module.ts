@@ -9,7 +9,9 @@ import { RouterModule, Routes, CanActivate } from '@angular/router';
 
 const routes: Routes = [
   {path: '', redirectTo: 'products', pathMatch: 'full'},
-  {path:'products', component: ProductsComponent, canActivate: [AuthGuard]},
+  {path:'products', component: ProductsComponent, 
+  canActivate: [AuthGuard]
+  },
   {path:'cart', component: CartComponent},
   {path: 'wishlist', component: WishlistComponent},
   {path: 'login', component: LoginComponent},

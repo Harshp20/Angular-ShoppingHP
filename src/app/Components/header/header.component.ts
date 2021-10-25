@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth.service';
 import { WishlistService } from './../../services/wishlist.service';
 import { Component, OnInit } from '@angular/core';
 import { CartServiceService } from 'src/app/services/cart-service.service';
@@ -12,7 +13,7 @@ export class HeaderComponent implements OnInit {
   public cartCount: number = 0  ;
   public wishlistCount: number = 0;
   
-  constructor(private cartService: CartServiceService, private wishlistService: WishlistService) { }
+  constructor(private cartService: CartServiceService, private wishlistService: WishlistService, public authService: AuthService) { }
 
   ngOnInit(): void {
 
@@ -24,7 +25,6 @@ export class HeaderComponent implements OnInit {
       this.wishlistCount= res.length;
     });
   }
-
   
 
 }

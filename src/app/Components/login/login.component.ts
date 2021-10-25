@@ -1,6 +1,7 @@
 import { Router } from '@angular/router';
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,11 @@ export class LoginComponent implements OnInit {
 
   login(user:any){
     this.auth.login(user).subscribe((res:any)=>{
-      if(res == true)
+      
+      if(res === 0){
+        this.router.navigate(['/login']);
+      }
+      else if(res == true)
         this.router.navigate(['/products']);
       else if(res == -1){
         console.log('User doesn\'t exist. Sign up!')

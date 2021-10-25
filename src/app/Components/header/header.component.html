@@ -10,12 +10,8 @@
 
     <button class="fas fa-search search-icon" aria-hidden="true"></button>
 
-
     <div class="collapse navbar-collapse" style="margin-left: 20px;" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" [routerLink]="['/products']" aria-current="page" href="#">Home</a>
-        </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/products']" href="#">Products</a>
         </li>
@@ -23,6 +19,9 @@
     </div>
 
     <ul class="navbar-nav">
+      <li>
+        <a (click)="authService.logout()" style="margin-right: 10px; color: aliceblue; cursor: pointer;" class="nav-link" *ngIf="authService.isLoggedIn()" >Logout</a>
+      </li>      
       
       <!-- Wishlist Icon-->
       <li>

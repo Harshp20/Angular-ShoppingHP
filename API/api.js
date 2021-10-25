@@ -15,12 +15,6 @@ mongoose.connect(db, (err)=>{
     }
 })
 
-router.get('/', (req, res)=>{
-    // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
-    // The above setting has been applied in app.use(cors) in server.js file
-    res.status(200).json(data);
-})
-
 const data= [
     {
         name: 'Apple AirPods 2nd Generation',
@@ -79,7 +73,27 @@ const data= [
     }
 ]
 
+router.get('/', (req, res)=>{
+    // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+    // The above setting has been applied in app.use(cors) in server.js file
+    res.status(200).json(data);
+})
 
+// function verifyToken(req, res, next){
+//     if(!req.headers.authorization){
+//         return res.status(401).send('unauth Request')
+//     }
+//     let token = req.headers.authorization.split(' ')[1]
+//     if(token === 'null'){
+//         return res.status(401).send('unauth Request')
+//     }
+//     let payload = jwt.verify(token, 'secreKey')
+//     if(!payload){
+//         return res.status(401).send('unauth Request')
+//     }
+//     req.userId = payload.subject
+//     next()
+// }
 
 router.post('/signup', (req, res)=>{   
 
@@ -111,7 +125,7 @@ router.post('/signup', (req, res)=>{
 router.post('/login', (req, res)=>{
     
     let userData = req.body;
-    console.log(userData);
+    // console.log(userData);
     
     User.findOne({
             username : userData.username}, (error, user)=>{
@@ -133,6 +147,13 @@ router.post('/login', (req, res)=>{
             res.status(200).json({token})
         }
     });
+
+    
+
+   
+
 });
+
+
 
 module.exports = router;

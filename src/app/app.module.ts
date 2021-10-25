@@ -1,3 +1,4 @@
+import { AuthGuard } from './services/auth.guard';
 import { WishlistService } from './services/wishlist.service';
 import { FetchapiService } from './services/fetchapi.service';
 import { CartServiceService } from './services/cart-service.service';
@@ -9,6 +10,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './Components/header/header.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokencatchService } from './services/tokencatch.service';
 
 
 @NgModule({
@@ -29,7 +32,13 @@ import { HeaderComponent } from './Components/header/header.component';
     AuthService,
     CartServiceService,
     FetchapiService,
-    WishlistService  
+    WishlistService,
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokencatchService,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

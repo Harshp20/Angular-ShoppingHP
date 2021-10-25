@@ -1,15 +1,17 @@
+import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 // import 'rxjs/add/operator/map';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
+import { ThrowStmt } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
   
   private signupUrl= 'http://localhost:8080/products/signup';
   private loginUrl= 'http://localhost:8080/products/login';
@@ -55,5 +57,13 @@ export class AuthService {
   isLoggedIn(){
     return !!localStorage.getItem('token');
   }
+
+  getToken(){
+    return localStorage.getItem('token');
+  }
   
+  logout(){
+    localStorage.removeItem('token')
+    this.router.navigate(['/login'])
+  }
 }
