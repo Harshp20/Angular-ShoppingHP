@@ -1,4 +1,31 @@
-# ShopHP
+<h1 align="center"><i>ShoppingHP</i></h1>
+
+<p align="center">
+        <a href="https://github.com/timgrossmann/InstaPy/blob/master/LICENSE">
+      <img src='https://img.shields.io/badge/Built%20with%20-%20Angular-red' >
+    </a>
+    <a href="https://github.com/timgrossmann/InstaPy/blob/master/LICENSE">
+      <img src="https://img.shields.io/badge/MongoDB-orange" >
+    </a>
+    <a href="https://github.com/SeleniumHQ/selenium">
+      <img src="https://img.shields.io/badge/ExpressJS-blue.svg" >
+    </a>
+    <a href="https://www.python.org/">
+    <img src='https://img.shields.io/badge/NodeJS-brightgreen'>
+    </a>
+      
+      
+      
+      
+      
+    
+</p>
+<p align='center'><a href='https://github.com/Harshp20'><img  src='https://img.shields.io/badge/Coded%20By-Harsh%20Pradhan-red'></a></p>
+
+- [x] 1. An E-Commerce application using MongoDB • ExpressJS • Angular • NodeJS
+- [x] 2. User registration and authentication using JSON Web Tokens (JWT)
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.8.
 

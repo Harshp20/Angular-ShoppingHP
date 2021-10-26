@@ -120,7 +120,7 @@ router.post('/signup', (req, res)=>{
         }
     });
 });
-        
+
 
 router.post('/login', (req, res)=>{
     
@@ -147,13 +147,6 @@ router.post('/login', (req, res)=>{
             res.status(200).json({token})
         }
     });
-
-    
-
-   
-
 });
-
-
 
 module.exports = router;
