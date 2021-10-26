@@ -13,15 +13,10 @@
     <a href="https://www.python.org/">
     <img src='https://img.shields.io/badge/NodeJS-brightgreen'>
     </a>
-      
-      
-      
-      
-      
-    
 </p>
 <p align='center'><a href='https://github.com/Harshp20'><img  src='https://img.shields.io/badge/Coded%20By-Harsh%20Pradhan-red'></a></p>
 
+## About:
 - [x] 1. An E-Commerce application using MongoDB • ExpressJS • Angular • NodeJS
 - [x] 2. User registration and authentication using JSON Web Tokens (JWT)
 
